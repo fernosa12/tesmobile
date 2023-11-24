@@ -134,7 +134,7 @@ class _TodoListState extends State<TodoList> {
               )
             else
               Container(
-                child: const Text('Tidak adat data cuy'),
+                child: const Text('Mohon isi data'),
               )
           ],
         ),
