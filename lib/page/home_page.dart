@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tesmobile/model/todo.dart';
+import 'package:tesmobile/model/data.dart';
 //TO CAN UNCEKLIS AT CHECKBOXLISTITLE MAKE VALUE IS "FALSE" !
 
 class TodoList extends StatefulWidget {
@@ -10,7 +10,7 @@ class TodoList extends StatefulWidget {
 }
 
 class _TodoListState extends State<TodoList> {
-  List<DataStudent> todos = dataStudent;
+  List<DataStudent> data = dataStudent;
   //variable di atas adalah untuk mengambil data dari file Model
   @override
   void initState() {
@@ -20,7 +20,7 @@ class _TodoListState extends State<TodoList> {
 
   void updateTodos() {
     setState(() {
-      todos = dataStudent; // Memperbarui daftar todos dari dataStudent
+      data = dataStudent; // Memperbarui daftar todos dari dataStudent
     });
   }
 
@@ -49,7 +49,7 @@ class _TodoListState extends State<TodoList> {
         return todoTitile.contains(input);
       }).toList();
       setState(() {
-        todos = dataFilter;
+        data = dataFilter;
       });
       //this code how to making function search bar
       //after that you must call name method "searchData" at Textfield bar
@@ -83,15 +83,15 @@ class _TodoListState extends State<TodoList> {
                 style: const TextStyle(color: Colors.white),
               ),
             ),
-            if (todos.isNotEmpty)
+            if (data.isNotEmpty)
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 width: widthBody,
                 height: heightBody * 0.8,
                 child: ListView.builder(
-                  itemCount: todos.length,
+                  itemCount: data.length,
                   itemBuilder: (context, index) {
-                    final todo = todos[index];
+                    final todo = data[index];
                     return Container(
                       child: ListTile(
                         title: Text(
