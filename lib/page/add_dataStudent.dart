@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tesmobile/model/todo.dart';
+import 'package:tesmobile/model/data.dart';
 
-class AddTodo extends StatelessWidget {
-  const AddTodo({Key? key}) : super(key: key);
+class AddDataStudent extends StatelessWidget {
+  const AddDataStudent({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,23 +41,23 @@ class AddTodo extends StatelessWidget {
               final int? nimParsed = int.tryParse(controllerNim.text);
               if (nimParsed != null) {
                 dataStudent.add(DataStudent(
-                    id: DateTime.now().toString(),
-                    // ignore: unrelated_type_equality_checks, prefer_is_empty
-                    nameClass: controllerNameClass.text.isEmpty
-                        ? 'No title'
-                        : controllerNameClass.text,
-                    // ignore: unrelated_type_equality_checks, prefer_is_empty
-                    nameStudent: controllerNameStudent.text.isEmpty
-                        ? 'No Desc'
-                        : controllerNameStudent.text,
-                    nim: nimParsed,
-                    alamat: controllerAlamat.text.isEmpty
-                        ? 'No Desc'
-                        : controllerAlamat.text,
-                    kelas: controllerKelas.text.isEmpty
-                        ? 'No Desc'
-                        : controllerKelas.text,
-                    isCompleted: false));
+                  id: DateTime.now().toString(),
+                  // ignore: unrelated_type_equality_checks, prefer_is_empty
+                  nameClass: controllerNameClass.text.isEmpty
+                      ? 'No title'
+                      : controllerNameClass.text,
+                  // ignore: unrelated_type_equality_checks, prefer_is_empty
+                  nameStudent: controllerNameStudent.text.isEmpty
+                      ? 'No Desc'
+                      : controllerNameStudent.text,
+                  nim: nimParsed,
+                  alamat: controllerAlamat.text.isEmpty
+                      ? 'No Desc'
+                      : controllerAlamat.text,
+                  kelas: controllerKelas.text.isEmpty
+                      ? 'No Desc'
+                      : controllerKelas.text,
+                ));
               }
             }
 

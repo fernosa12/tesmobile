@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tesmobile/page/add_todo.dart';
+import 'package:tesmobile/page/add_dataStudent.dart';
+
 import 'package:tesmobile/page/home_page.dart';
 import 'package:tesmobile/page/login_view.dart';
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         'home_page': (context) => const TodoList(),
-        'add_todo': (context) => const AddTodo(),
+        'add_data': (context) => const AddDataStudent(),
         "login_view": (context) => const LoginPage(),
       },
       initialRoute: 'login_view',

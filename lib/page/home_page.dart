@@ -40,12 +40,11 @@ class _TodoListState extends State<TodoList> {
         MediaQuery.of(context).padding.top;
     double widthBody = MediaQuery.of(context).size.width;
     //function search
-    void searchTodo(String query) {
-      final dataFilter = dataStudent.where((todo) {
-        // So you must make variable and take data from "dataStudent".
-        final todoTitile = todo.nameClass.toLowerCase();
+    void searchData(String query) {
+      final input = query.toLowerCase();
+      final dataFilter = dataStudent.where((data) {
+        final todoTitile = data.nameClass.toLowerCase();
 
-        final input = query;
         return todoTitile.contains(input);
       }).toList();
       setState(() {
@@ -58,7 +57,7 @@ class _TodoListState extends State<TodoList> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pushNamed(context, 'add_todo')
+          Navigator.pushNamed(context, 'add_data')
               .then((value) => updateTodos());
         },
         child: const Icon(Icons.add),
@@ -73,7 +72,7 @@ class _TodoListState extends State<TodoList> {
               height: MediaQuery.of(context).size.height * 1 / 7,
               // color: Colors.amber,
               child: TextField(
-                onChanged: searchTodo,
+                onChanged: (value) => searchData(value),
                 //so variable searchTodo from method function search bar
                 decoration: const InputDecoration(
                     border: OutlineInputBorder(),

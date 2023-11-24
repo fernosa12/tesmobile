@@ -5,16 +5,15 @@ class DataStudent {
   int? nim;
   final String alamat;
   final String kelas;
-  bool isCompleted;
 
-  DataStudent(
-      {required this.id,
-      required this.nameClass,
-      required this.nameStudent,
-      this.nim,
-      required this.alamat,
-      required this.kelas,
-      required this.isCompleted});
+  DataStudent({
+    required this.id,
+    required this.nameClass,
+    required this.nameStudent,
+    this.nim,
+    required this.alamat,
+    required this.kelas,
+  });
 
   @override
   String toString() {
@@ -29,5 +28,5 @@ List<DataStudent> dataStudent = [
       nameStudent: '',
       alamat: '',
       kelas: '',
-      isCompleted: false),
+      nim: 0),
 ];

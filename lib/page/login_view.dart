@@ -58,15 +58,22 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            FlutterLogo(size: 100.0), // Flutter logo with a size of 100
+            const SizedBox(height: 30),
             TextField(
               controller: _usernameController,
               decoration: const InputDecoration(
+                border: OutlineInputBorder(borderSide: BorderSide()),
                 labelText: 'Username',
               ),
+            ),
+            SizedBox(
+              height: 30,
             ),
             TextField(
               controller: _passwordController,
               decoration: const InputDecoration(
+                border: OutlineInputBorder(),
                 labelText: 'Password',
               ),
               obscureText: true,
