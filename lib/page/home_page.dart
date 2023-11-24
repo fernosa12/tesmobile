@@ -10,7 +10,7 @@ class TodoList extends StatefulWidget {
 }
 
 class _TodoListState extends State<TodoList> {
-  List<Todo> todos = dataTodo;
+  List<DataStudent> todos = dataStudent;
   //variable di atas adalah untuk mengambil data dari file Model
   @override
   void initState() {
@@ -20,7 +20,7 @@ class _TodoListState extends State<TodoList> {
 
   void updateTodos() {
     setState(() {
-      todos = dataTodo; // Memperbarui daftar todos dari dataTodo
+      todos = dataStudent; // Memperbarui daftar todos dari dataStudent
     });
   }
 
@@ -28,7 +28,7 @@ class _TodoListState extends State<TodoList> {
   Widget build(BuildContext context) {
     AppBar myappbar = AppBar(
       title: const Text(
-        'To do List Bojew',
+        'Data Mahasiwa',
         style: TextStyle(color: Colors.white),
       ),
       centerTitle: true,
@@ -41,18 +41,18 @@ class _TodoListState extends State<TodoList> {
     double widthBody = MediaQuery.of(context).size.width;
     //function search
     void searchTodo(String query) {
-      final todoFilter = dataTodo.where((todo) {
-        // So you must make variable and take data from "dataTodo".
+      final dataFilter = dataStudent.where((todo) {
+        // So you must make variable and take data from "dataStudent".
         final todoTitile = todo.nameClass.toLowerCase();
-        //todoTitle adalah variable untuk memanggil parameter title di model maka jadi nya "todo.title"
+
         final input = query;
         return todoTitile.contains(input);
       }).toList();
       setState(() {
-        todos = todoFilter;
+        todos = dataFilter;
       });
       //this code how to making function search bar
-      //after that you must call name method "searchTodo" at Textfield bar
+      //after that you must call name method "searchData" at Textfield bar
     }
 
     return Scaffold(
@@ -78,7 +78,7 @@ class _TodoListState extends State<TodoList> {
                 decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     prefixIcon: Icon(Icons.search),
-                    hintText: 'Silahkan cari di sini ler !',
+                    hintText: 'Cari data!',
                     hintStyle: TextStyle(color: Colors.white)),
                 style: const TextStyle(color: Colors.white),
               ),
@@ -112,7 +112,7 @@ class _TodoListState extends State<TodoList> {
                                   fontWeight: FontWeight.bold),
                             ),
                             Text(
-                              todo.nim,
+                              todo.nim.toString(),
                               style: const TextStyle(color: Colors.white),
                             ),
                             Text(

@@ -39,29 +39,29 @@ class AddTodo extends StatelessWidget {
                 // ignore: prefer_is_empty
                 controllerKelas.text.isNotEmpty) {
               final int? nimParsed = int.tryParse(controllerNim.text);
-              dataTodo.add(Todo(
-                  id: DateTime.now().toString(),
-                  // ignore: unrelated_type_equality_checks, prefer_is_empty
-                  nameClass: controllerNameClass.text.isEmpty
-                      ? 'No title'
-                      : controllerNameClass.text,
-                  // ignore: unrelated_type_equality_checks, prefer_is_empty
-                  nameStudent: controllerNameStudent.text.isEmpty
-                      ? 'No Desc'
-                      : controllerNameStudent.text,
-                  nim: controllerNim.text.isEmpty
-                      ? " No Nim"
-                      : controllerNim.text,
-                  alamat: controllerAlamat.text.isEmpty
-                      ? 'No Desc'
-                      : controllerAlamat.text,
-                  kelas: controllerKelas.text.isEmpty
-                      ? 'No Desc'
-                      : controllerKelas.text,
-                  isCompleted: false));
+              if (nimParsed != null) {
+                dataStudent.add(DataStudent(
+                    id: DateTime.now().toString(),
+                    // ignore: unrelated_type_equality_checks, prefer_is_empty
+                    nameClass: controllerNameClass.text.isEmpty
+                        ? 'No title'
+                        : controllerNameClass.text,
+                    // ignore: unrelated_type_equality_checks, prefer_is_empty
+                    nameStudent: controllerNameStudent.text.isEmpty
+                        ? 'No Desc'
+                        : controllerNameStudent.text,
+                    nim: nimParsed,
+                    alamat: controllerAlamat.text.isEmpty
+                        ? 'No Desc'
+                        : controllerAlamat.text,
+                    kelas: controllerKelas.text.isEmpty
+                        ? 'No Desc'
+                        : controllerKelas.text,
+                    isCompleted: false));
+              }
             }
 
-            print(dataTodo);
+            print(dataStudent);
             //code ini adalah untuk add data atau menambahkan data pada HomePage
             Navigator.pop(context);
           },
@@ -112,7 +112,7 @@ class AddTodo extends StatelessWidget {
                       color: Colors.white12),
                   child: TextField(
                       controller: controllerNim,
-                      //ini adalah cara memanggil code controller di atas
+                      keyboardType: TextInputType.number,
                       maxLines: 3,
                       maxLength: 20,
                       style: const TextStyle(fontSize: 20),
