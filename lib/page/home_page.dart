@@ -10,12 +10,12 @@ class TodoList extends StatefulWidget {
 }
 
 class _TodoListState extends State<TodoList> {
-  List<DataStudent> data = dataStudent;
+  List<DataStudent> data = [];
   //variable di atas adalah untuk mengambil data dari file Model
   @override
   void initState() {
     super.initState();
-    updateTodos();
+    data = dataStudent;
   }
 
   void updateTodos() {

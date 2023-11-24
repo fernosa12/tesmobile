@@ -21,12 +21,4 @@ class DataStudent {
   }
 }
 
-List<DataStudent> dataStudent = [
-  DataStudent(
-      id: DateTime.now().toString(),
-      nameClass: '',
-      nameStudent: '',
-      alamat: '',
-      kelas: '',
-      nim: 0),
-];
+List<DataStudent> dataStudent = [];
